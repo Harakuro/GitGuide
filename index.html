@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GitGuide for NTUCSIEB05</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/mytheme.css" id="theme">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1 style="margin-bottom: 0px;">Git Guide</h1>
+                <p style="text-align: right; font-size: 24px; margin-top: 0px;">For NTUCSIEB05</p>
+                <p>
+                    <br> By 莊翔旭
+                </p>
+            </section>
+            <section>
+                <section>
+                    <h2>什麼是 Git？</h2>
+                </section>
+                <section>
+                    <q>"Git is a free and open source distributed version control system designed to handle everything from small to large projects with speed and efficiency."</q>
+                    <P style="text-align: right; font-size: 30px;">By Linus Torvalds</P>
+                    <aside class="notes">
+                        <!-- 講稿 -->
+                    </aside>
+                </section>
+                <section>
+                    <ul>
+                        <li>免費且開源 Free and Open source</li>
+                        <li>發散式版本控制系統 DVCS</li>
+                        <li>創造者：Linus Torvalds (Linux creator)
+                            <ul>
+                                <li>目的：<span class="fragment highlight-red" data-fragment-index="1">管理</span>Linux Kernel 原始碼</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <aside class="notes">
+                        <!-- 講稿 -->
+                    </aside>
+                </section>
+                <section>
+                    <h2>那誰再用 Git 管理？</h2>
+                </section>
+                <section>
+                    <img data-src="img/using_git.png">
+                    <aside class="notes">
+                        <!-- 講稿 -->
+                    </aside>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>為什麼我們需要？</h2>
+                    <P class="fragment">
+                        <br>
+                        <br>我們來一點想像......</P>
+                </section>
+                <section>
+                    <h2>當我們修改程式到一個段落</h2>
+                    <h2 class="fragment">要存檔時......</h2>
+                </section>
+                <section>
+                    <h2>1.直接存檔，不備份</h2>
+                    <p class="fragment" data-fragment-index="1">這做法不行，但要改回去好麻煩......GG</p>
+                    <p class="fragment" data-fragment-index="2">改爛了！是改到哪裡開始出錯的......GG</p>
+                    <img class="fragment" data-fragment-index="3" data-src="img/coding.png">
+                </section>
+                <section>
+                    <h2>那就來點 RE. 吧</h2>
+                </section>
+                <section>
+                    <h2>2.修改前暫時備份一份</h2>
+                    <p class="fragment" data-fragment-index="1">突然需要改回好久以前的版本......GG</p>
+                </section>
+                <section>
+                    <h2>3.那有改變就備份一份！</h2>
+                    <img data-src="img/filebackup.jpg">
+                </section>
+                <section>
+                    <ul>
+                        <li>看起來很棒</li>
+                        <li class="fragment" data-fragment-index="1">但如何命名？日期時間？</li>
+                        <li class="fragment" data-fragment-index="1">WTF！那天我改了什麼？</li>
+                        <li class="fragment" data-fragment-index="1">硬碟空間不夠用！</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>更不用說....</h2>
+                    <h2>未來還要<span class="fragment highlight-red" data-fragment-index="1">多人協作</span>一份project</h2>
+                    <ul>
+                        <li class="fragment" data-fragment-index="1">命名還需要加上編輯者？</li>
+                        <li class="fragment" data-fragment-index="1">WTF！那天誰又改了什麼？</li>
+                        <li class="fragment" data-fragment-index="1">檔案伺服器空間不夠用！</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>為了解決以上問題</h2>
+                    <h2><span class="fragment highlight-red" data-fragment-index="0">版本控制系統 VCS </span>就出現了</h2>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>版本控制系統</h2>
+                    <p>Version Control System</p>
+                </section>
+                <section>
+                    <h2>本地端版本控制系統</h2>
+                    <p>Local VCS</p>
+                    <ul>
+                        <li class="fragment" data-fragment-index="1">無法協同開發</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>集中式版本控制系統</h2>
+                    <p>Centralized VCS (Lock型，悲觀鎖定) (第二代)</p>
+                    <img data-src="img/CCVSLOCK.png">
+                    <ul>
+                        <li class="fragment" data-fragment-index="1">可以避免衝突</li>
+                        <li class="fragment" data-fragment-index="1">其他人得排隊，越多人效率越差</li>
+                        <li class="fragment" data-fragment-index="1">先取出的人寫很久或忘記 unlock....</li>
+                    </ul>
+                    <aside class="notes">
+                        中央團隊共用的Repository，當有人要編輯某個檔案時，進行鎖定，以避免其他人也同時編輯造成衝突。
+                    </aside>
+                </section>
+                <section>
+                    <h2>集中式版本控制系統</h2>
+                    <p>Centralized VCS (Merge型，樂觀鎖定) (第二代)</p>
+                    <img data-src="img/CCSVMERGR.png">
+                    <ul>
+                        <li class="fragment" data-fragment-index="1">做什麼事都要跟、伺服器連線</li>
+                        <li class="fragment" data-fragment-index="1">單點故障 Single point of failure</li>
+                    </ul>
+                    <aside class="notes">
+                        中央團隊共用的Repository，但是不用Lock來避免衝突，而是事後發現如果有別人也修改同一個檔案(稱作衝突)，再進行手動編修解決。 單點故障：只要伺服器壞掉，大家就不用作事了。
+                    </aside>
+                </section>
+                <section>
+                    <h2>分散式版本控制系統</h2>
+                    <p>Distributed VCS (Git)</p>
+                    <img data-src="img/DVCS.png">
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>終於要來談談 Git 了</h2>
+                    <ul>
+                        <li class="fragment" data-fragment-index="1">便宜快速 ( open souese and free )</li>
+                        <li class="fragment" data-fragment-index="1">省空間 ( DAG儲存系統 )</li>
+                        <li class="fragment" data-fragment-index="1">內容保存在本地端，可不須網路</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>我知道git是什麼了</h2>
+                    <h2>但是要怎麼用？</h2>
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+    Reveal.initialize({
+        controls: false,
+        history: true,
+
+        dependencies: [{
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true
+        }]
+    });
+    </script>
+</body>
+
+</html>
