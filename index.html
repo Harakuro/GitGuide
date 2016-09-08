@@ -216,9 +216,9 @@ work on the current change (see also: git help everyday)
                 <section>
                     <h2>開始使用 Git！</h2>
                     <p>首先先建立一個 Git 的 Repository
-                        <br>可以把 Repository 想做是一個資料庫的意思。</p>
+                        <br>可以把 Repository 想做是一個資料庫的意思</p>
                     <p>建立一個 Git 的 Repository 有兩種方法：</p>
-                        <p class="fragment grow highlight-red" data-fragment-index="1">init & clone</p>
+                    <p class="fragment grow highlight-red" data-fragment-index="1">init & clone</p>
                 </section>
                 <section>
                     <h2>開始使用 Git！- init</h2>
@@ -257,7 +257,7 @@ Initialized empty Git repository in /path/<i>file_name</i>/.git
 nothing to commit (create/copy files and use "git add" to track)
 </code></pre>
                     <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">
-                        <br>現在在目錄裡新增一個 test.c 檔案後...</p>
+                        <br>現在在資料夾裡新增一個 test.c 檔案後...</p>
                     <pre class="fragment" data-fragment-index="1"><code><span style="color: white;">$</span> <span style="color: yellow;">vi test.c</span>
 # #include <學術部很棒.h>
 #
@@ -387,6 +387,87 @@ nothing added to commit but untracked files present (use "git add" to track)
             </section>
             <section>
                 <section>
+                    <h2>branch 哲學</h2>
+                    <img data-src="img/branch-gh.png">
+                </section>
+                <section>
+                    <h2>新增支線任務 branch</h2>
+                    <p style="font-size: 0.9em;">列出所有的 branch 並提示目前正在哪個 branch</p>
+                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git branch</span>
+* master
+</code></pre>
+                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">確認完有哪些 branch 後，就要來新增拉</p>
+                    <pre class="fragment" data-fragment-index="1"><code><span style="color: white;">$</span> <span style="color: yellow;">git branch cat</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git branch</span>
+  cat
+* master
+
+<span style="color: lightgray;">## 注意: 新增完後所在的 branch 還是 master ##</span>
+</code></pre>
+                </section>
+                <section>
+                    <h2>新增支線 branch</h2>
+                    <p style="font-size: 0.9em;">這時候的 branch 長這樣</p>
+                    <img data-src="img/branch-gh-cr.png">
+                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">那...要怎麼切換呢？ 還是在 Master 上不是嗎？</p>
+                </section>
+                <section>
+                    <h2>偶而，也想換個 branch</h2>
+                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git checkout cat</span>
+Switched to branch 'cat'
+
+<span style="color: lightgray;">## 檢查一下所在 branch ##</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git branch</span>
+* cat
+  master
+</code></pre>
+                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">現在你可以對 cat 這個 branch 做些壞壞的事情拉</p>
+                </section>
+                <section>
+                    <h2>對著 branch 做些什麼吧！</h2>
+                    <p style="font-size: 0.9em;">接下來在 cat branch 上做點事情
+                        <br>新增一個檔案，加上內容，將它 add 到 stage 後再 commit</p>
+                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">vim myPet/cat.c</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git status</span>
+# On branch cat
+# Untracked files:
+#   (use "git add ..." to include in what will be committed)
+#
+#   myPet/cat.c
+nothing added to commit but untracked files present (use "git add" to track)
+<span style="color: white;">$</span> <span style="color: yellow;">git add myPet/cat.c</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git commit -m "Add Cat.c"</span>
+[cat ea7d309] Add Cat.c
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+ create mode 100644 myPet/cat.c
+</code></pre>
+                </section>
+                <section>
+                    <h2>這樣資料夾不是很亂嗎？？</h2>
+                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">咱們切回去就知道了！</p>
+                    <pre class="fragment" data-fragment-index="1"><code><span style="color: white;">$</span> <span style="color: yellow;">ls</span>
+test.c <span style="color: lightblue;">myPet</span>/
+
+<span style="color: white;">$</span> <span style="color: yellow;">git checkout master</span>
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+<span style="color: white;">$</span> <span style="color: yellow;">ls</span>
+test.c
+</code></pre>
+                    <p class="fragment" data-fragment-index="2" style="font-size: 0.9em;">剛剛新增的 myPet/cat.c 消失了！
+                        <br>
+                        <br>Git 在切換 branch 的同時會把目錄更動成那個 branch 的狀態</p>
+                </section>
+                <section>
+                    <h2>再次支線 branch</h2>
+                    <p style="font-size: 0.9em;">好！我們切回去 cat branch 在做些事情然後 commit
+                        <br>再切回去 master 查看 branch 狀態</p>
+                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git checkout master</span>
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 2 commit.
+</code></pre>
+                    <p style="font-size: 0.9em;">這時候的 branch 長這樣</p>
+                    <img data-src="img/branch-gh-co.png">
                 </section>
             </section>
         </div>
