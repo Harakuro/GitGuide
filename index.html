@@ -29,7 +29,8 @@
                 <h1 style="margin-bottom: 0px;">Git Guide</h1>
                 <p style="text-align: right; font-size: 24px; margin-top: 0px;">For NTUCSIEB05</p>
                 <p>
-                    <br> By 莊翔旭
+                    <br>
+                    <small>Created by B04莊翔旭 / <a href="https://github.com/Harakuro" target="_blank">@Harakuro</a></small>
                 </p>
             </section>
             <section>
@@ -80,12 +81,13 @@
                 </section>
                 <section>
                     <h2>1.直接存檔，不備份</h2>
-                    <p class="fragment" data-fragment-index="1">這做法不行，但要改回去好麻煩......GG</p>
+                    <p class="fragment" data-fragment-index="1">這 code 不行，但要改回去好麻煩......GG</p>
                     <p class="fragment" data-fragment-index="2">改爛了！是改到哪裡開始出錯的......GG</p>
                     <img class="fragment" data-fragment-index="3" data-src="img/coding.png">
                 </section>
                 <section>
                     <h2>那就來點 RE. 吧</h2>
+                    <p class="fragment" data-fragment-index="1" style="text-align: right; font-size: 30px;">ゼロから始める異世界生活？</p>
                 </section>
                 <section>
                     <h2>2.修改前暫時備份一份</h2>
@@ -124,7 +126,7 @@
                 </section>
                 <section>
                     <h2>本地端版本控制系統</h2>
-                    <p>Local VCS</p>
+                    <p>Local VCS (第一代)</p>
                     <ul>
                         <li class="fragment" data-fragment-index="1">無法協同開發</li>
                     </ul>
@@ -173,6 +175,219 @@
                     <h2>我知道git是什麼了</h2>
                     <h2>但是要怎麼用？</h2>
                 </section>
+                <section>
+                    <h2>查詢 Git 指令</h2>
+                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git help</span>
+
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+
+...
+</code></pre>
+                </section>
+                <section>
+                    <h2>設定自己的 Git！-config</h2>
+                    <pre><code><span style="color: lightgray;">## 查 confing 怎麼用，要離開指令說明的話要按下":q" ##</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git help confing</span>
+
+<span style="color: lightgray;">## 設定使用者名稱，用來記錄誰更改檔案，--global 表示是全域的設定 ##</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git config --global user.name "User_name"</span>
+
+<span style="color: lightgray;">## 我們可以開啟 colorui 讓 git 輸出的文字加上顏色 ##</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git config --global color.ui true</span>
+
+<span style="color: lightgray;">## 查看目前的 git config 設定 ##</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git config --list</span>
+</code></pre>
+                </section>
+                <section>
+                    <h2>開始使用 Git！</h2>
+                    <p>首先先建立一個 Git 的 Repository
+                        <br>可以把 Repository 想做是一個資料庫的意思。</p>
+                    <p>建立一個 Git 的 Repository 有兩種方法：</p>
+                        <p class="fragment grow highlight-red" data-fragment-index="1">init & clone</p>
+                </section>
+                <section>
+                    <h2>開始使用 Git！- init</h2>
+                    <pre><code><span style="color: lightgray;">## 先建立資料夾 ##</span>
+<span style="color: white;">$</span> <span style="color: yellow;">mkdir <i>file_name</i></span>
+
+<span style="color: lightgray;">## 移動到剛剛創好的資料夾 ##</span>
+<span style="color: white;">$</span> <span style="color: yellow;">cd <i>file_name</i></span>
+
+<span style="color: lightgray;">## 建立 Git repo ##</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git init</span>
+Initialized empty Git repository in /path/<i>file_name</i>/.git
+
+<span style="color: lightgray;">## 會把當前資料夾設定成一個 repo ##</span>
+</code></pre>
+                </section>
+                <section>
+                    <h2>開始使用 Git！- clone</h2>
+                    <pre><code><span style="color: lightgray;">## 複製 Git repo ##</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git clone https://path/repo_name.git <i>file_name</i></span>
+
+<span style="color: lightgray;">## 會在當前資料夾中建立一個 <i>file_name</i> 的資料夾，把 git 下來的資料放進去 ##</span>
+</code></pre>
+                </section>
+                <section>
+                    <h2>Git的基本功</h2>
+                    <p>status, add, commit, log</p>
+                </section>
+                <section>
+                    <h2>Git的基本功 - status</h2>
+                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git status</span>
+# On branch master
+#
+# Initial commit
+#
+nothing to commit (create/copy files and use "git add" to track)
+</code></pre>
+                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">
+                        <br>現在在目錄裡新增一個 test.c 檔案後...</p>
+                    <pre class="fragment" data-fragment-index="1"><code><span style="color: white;">$</span> <span style="color: yellow;">vi test.c</span>
+# #include <學術部很棒.h>
+#
+# void main(void){
+#     ...
+# }
+<span style="color: white;">:q</span>
+</code></pre>
+                </section>
+                <section>
+                    <h2>Git的基本功 - status</h2>
+                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git status</span>
+# On branch master
+#
+# Initial commit
+#
+# Untracked files:
+#   (use "git add ..." to include in what will be committed)
+#
+#   test.c
+nothing added to commit but untracked files present (use "git add" to track)
+</code></pre>
+                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">
+                        <br>會看到剛剛新增的 test.c 檔案變成 Untracked files</p>
+                </section>
+                <section>
+                    <h2>Git的基本功 - add</h2>
+                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git add test.c</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git status</span>
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached ..." to unstage)
+#
+#   new file:   test.c
+#
+</code></pre>
+                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">test.c 的狀態 Untracked files → Changes to commit (stage)</p>
+                    <p class="fragment" data-fragment-index="2" style="font-size: 0.9em;">如果新增錯檔案了怎麼辦？這個指令可以拯救你！</p>
+                    <pre class="fragment" data-fragment-index="2"><code><span style="color: white;">$</span> <span style="color: yellow;">git rm <i>file_name</i></span></code></pre>
+                </section>
+                <section>
+                    <h2>Git的基本功 - add</h2>
+                    <pre><code><span style="color: lightgray;">## tip: git add 各種用法 ##</span>
+
+<span style="color: lightgray;">## 將列出的 file 新增到 stage ##</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git add <i>file_name_1</i>, <i>file_name_2</i>, ...</span>
+
+<span style="color: lightgray;">## 將整份 repo 裡全部有改變的檔案新增到 stage ##</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git add --all</span>
+新增到 stage
+<span style="color: lightgray;">## 將目前資料夾裡全部有更改的 txt files 新增到 stage ##</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git add *.txt</span>
+
+<span style="color: lightgray;">## 將 docs 資料夾裡全部有更改的 txt files 新增到 stage ##</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git add docs/*.txt</span>
+
+<span style="color: lightgray;">## 將 docs 資料夾裡全部有更改的檔案新增到 stage ##</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git add docs/</span>
+
+<span style="color: lightgray;">## 將整份 repo 裡全部有更改的 txt files 新增到 stage ##</span>
+<span style="color: white;">$</span> <span style="color: yellow;">git add "*.txt"</span>
+</code></pre>
+                </section>
+                <section>
+                    <h2>Git的基本功 - commit</h2>
+                    <p style="font-size: 0.9em;">將檔案新增到 stage 之後...就要 commit！</p>
+                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git commit</span></code></pre>
+                    <p style="font-size: 0.9em;">輸入完會跳出純文字編輯器，會讓你輸入這次更動改了什麼</p>
+                    <pre><code><span style="color: white;">Add test.c file to test git function</span>
+#
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#  (use "git rm --cached …" to unstage)
+#
+#       new file: test.c
+#
+</code></pre>
+                </section>
+                <section>
+                    <h2>Git的基本功 - commit</h2>
+                    <p style="font-size: 0.9em;">成功之後就會出現以下訊息</p>
+                    <pre><code>[master 5f76371] Add test.c file to test git function
+ 1 files changed, 8 insertions(+), 0 deletions(-)
+ create mode 100644 test.c</code></pre>
+                    <p style="font-size: 0.9em;">加號(+)代表增加的部份，減號(–)代表刪除的部份</p>
+                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">
+                        <br>每次 commit 都要進編輯器打訊息好麻煩，那就加上 -m</p>
+                    <pre class="fragment" data-fragment-index="1"><code><span style="color: white;">$</span> <span style="color: yellow;">git commit -m "Add test.c to test git function"</span></code></pre>
+                </section>
+                <section>
+                    <h2>Git的基本功 - log</h2>
+                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git log</span>
+5f76371 - (HEAD, master) Add test.c file to test git function (3 minutes ago)
+4ca268d - (origin/master) First commit (33 minutes ago)
+</code></pre>
+                    <p style="font-size: 0.9em;">亂碼是當次 commit 的版號，後面的是 commit 的訊息、時間</p>
+                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">使用 --stat 參數可以看到更詳盡的訊息</p>
+                    <pre class="fragment" data-fragment-index="1"><code><span style="color: white;">$</span> <span style="color: yellow;">git log --stat</span>
+5f76371 - (HEAD, master) Add test.c file to test git function (7 minutes ago) 
+ .gitignore |    3 +++
+ test.rb    |    5 +++++
+ 2 files changed, 8 insertions(+), 0 deletions(-)
+
+4ca268d - (origin/master) First commit (37 minutes ago) 
+ lib/animal.rb       |    5 +++++
+ spec/animal_spec.rb |    5 +++++
+ 2 files changed, 10 insertions(+), 0 deletions(-)
+</code></pre>
+                    <p class="fragment" data-fragment-index="2" style="font-size: 0.9em;">還想要更多更詳細的訊息，就加上 -p</p>
+                </section>
+                <section>
+                    <h2>Git 基本功重點整理！</h2>
+                    <img data-src="img/git-lifecycle.png">
+                </section>
+                <section>
+                    <h2>Git 就只有這樣嗎？</h2>
+                    <p class="fragment" data-fragment-index="1">當然不只，還有 branch！</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                </section>
             </section>
         </div>
     </div>
@@ -181,15 +396,9 @@
     <script>
     Reveal.initialize({
         controls: false,
-        history: false,
+        history: true,
 
         dependencies: [{
-            src: 'plugin/highlight/highlight.js',
-            async: true,
-            callback: function() {
-                hljs.initHighlightingOnLoad();
-            }
-        }, {
             src: 'plugin/zoom-js/zoom.js',
             async: true
         }, {
