@@ -26,8 +26,9 @@
     <div class="reveal">
         <div class="slides">
             <section>
+                <img src="img/git_logo.png" style="width: 15%; height: auto;">
                 <h1 style="margin-bottom: 0px;">Git Guide</h1>
-                <p style="text-align: right; font-size: 24px; margin-top: 0px;">For NTUCSIEB05</p>
+                <p style="text-align: right; font-size: 0.66em; margin-top: 0px;">For NTUCSIEB05</p>
                 <p>
                     <br>
                     <small>Created by B04莊翔旭 / <a href="https://github.com/Harakuro" target="_blank">@Harakuro</a></small>
@@ -39,7 +40,7 @@
                 </section>
                 <section>
                     <q>"Git is a free and open source distributed version control system designed to handle everything from small to large projects with speed and efficiency."</q>
-                    <P style="text-align: right; font-size: 30px;">By Linus Torvalds</P>
+                    <P style="text-align: right; font-size: 0.7em;">By Linus Torvalds</P>
                     <aside class="notes">
                         <!-- 講稿 -->
                     </aside>
@@ -87,7 +88,7 @@
                 </section>
                 <section>
                     <h2>那就來點 RE. 吧</h2>
-                    <p class="fragment" data-fragment-index="1" style="text-align: right; font-size: 30px;">ゼロから始める異世界生活？</p>
+                    <p class="fragment" data-fragment-index="1" style="text-align: right; font-size: 0.8em;">ゼロから始める異世界生活？</p>
                 </section>
                 <section>
                     <h2>2.修改前暫時備份一份</h2>
@@ -177,7 +178,7 @@
                 </section>
                 <section>
                     <h2>查詢 Git 指令</h2>
-                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git help</span>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git help</span>
 
 usage: git [--version] [--help] [-C <path>] [-c name=value]
            [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
@@ -200,17 +201,17 @@ work on the current change (see also: git help everyday)
                 </section>
                 <section>
                     <h2>設定自己的 Git！-config</h2>
-                    <pre><code><span style="color: lightgray;">## 查 confing 怎麼用，要離開指令說明的話要按下":q" ##</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git help confing</span>
+                    <pre><code>## 查 confing 怎麼用，要離開指令說明的話要按下":q" ##
+<span class="cmd-prefix">$</span> <span class="cmd">git help confing</span>
 
-<span style="color: lightgray;">## 設定使用者名稱，用來記錄誰更改檔案，--global 表示是全域的設定 ##</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git config --global user.name "User_name"</span>
+## 設定使用者名稱，用來記錄誰更改檔案，--global 表示是全域的設定 ##
+<span class="cmd-prefix">$</span> <span class="cmd">git config --global user.name "User_name"</span>
 
-<span style="color: lightgray;">## 我們可以開啟 colorui 讓 git 輸出的文字加上顏色 ##</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git config --global color.ui true</span>
+## 我們可以開啟 colorui 讓 git 輸出的文字加上顏色 ##
+<span class="cmd-prefix">$</span> <span class="cmd">git config --global color.ui true</span>
 
-<span style="color: lightgray;">## 查看目前的 git config 設定 ##</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git config --list</span>
+## 查看目前的 git config 設定 ##
+<span class="cmd-prefix">$</span> <span class="cmd">git config --list</span>
 </code></pre>
                 </section>
                 <section>
@@ -222,25 +223,25 @@ work on the current change (see also: git help everyday)
                 </section>
                 <section>
                     <h2>開始使用 Git！- init</h2>
-                    <pre><code><span style="color: lightgray;">## 先建立資料夾 ##</span>
-<span style="color: white;">$</span> <span style="color: yellow;">mkdir <i>file_name</i></span>
+                    <pre><code>## 先建立資料夾 ##
+<span class="cmd-prefix">$</span> <span class="cmd">mkdir <i>file_name</i></span>
 
-<span style="color: lightgray;">## 移動到剛剛創好的資料夾 ##</span>
-<span style="color: white;">$</span> <span style="color: yellow;">cd <i>file_name</i></span>
+## 移動到剛剛創好的資料夾 ##
+<span class="cmd-prefix">$</span> <span class="cmd">cd <i>file_name</i></span>
 
-<span style="color: lightgray;">## 建立 Git repo ##</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git init</span>
+## 建立 Git repo ##
+<span class="cmd-prefix">$</span> <span class="cmd">git init</span>
 Initialized empty Git repository in /path/<i>file_name</i>/.git
 
-<span style="color: lightgray;">## 會把當前資料夾設定成一個 repo ##</span>
+## 會把當前資料夾設定成一個 repo ##
 </code></pre>
                 </section>
                 <section>
                     <h2>開始使用 Git！- clone</h2>
-                    <pre><code><span style="color: lightgray;">## 複製 Git repo ##</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git clone https://path/repo_name.git <i>file_name</i></span>
+                    <pre><code>## 複製 Git repo ##
+<span class="cmd-prefix">$</span> <span class="cmd">git clone https://path/repo_name.git <i>file_name</i></span>
 
-<span style="color: lightgray;">## 會在當前資料夾中建立一個 <i>file_name</i> 的資料夾，把 git 下來的資料放進去 ##</span>
+## 會在當前資料夾中建立一個 <i>file_name</i> 的資料夾，把 git 下來的資料放進去 ##
 </code></pre>
                 </section>
                 <section>
@@ -249,27 +250,27 @@ Initialized empty Git repository in /path/<i>file_name</i>/.git
                 </section>
                 <section>
                     <h2>Git的基本功 - status</h2>
-                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git status</span>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git status</span>
 # On branch master
 #
 # Initial commit
 #
 nothing to commit (create/copy files and use "git add" to track)
 </code></pre>
-                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">
+                    <p class="fragment" data-fragment-index="1">
                         <br>現在在資料夾裡新增一個 test.c 檔案後...</p>
-                    <pre class="fragment" data-fragment-index="1"><code><span style="color: white;">$</span> <span style="color: yellow;">vi test.c</span>
+                    <pre class="fragment" data-fragment-index="1"><code><span class="cmd-prefix">$</span> <span class="cmd">vim test.c</span>
 # #include <學術部很棒.h>
 #
 # void main(void){
 #     ...
 # }
-<span style="color: white;">:q</span>
+<span class="cmd-prefix">:q</span>
 </code></pre>
                 </section>
                 <section>
                     <h2>Git的基本功 - status</h2>
-                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git status</span>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git status</span>
 # On branch master
 #
 # Initial commit
@@ -280,13 +281,13 @@ nothing to commit (create/copy files and use "git add" to track)
 #   test.c
 nothing added to commit but untracked files present (use "git add" to track)
 </code></pre>
-                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">
+                    <p class="fragment" data-fragment-index="1">
                         <br>會看到剛剛新增的 test.c 檔案變成 Untracked files</p>
                 </section>
                 <section>
                     <h2>Git的基本功 - add</h2>
-                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git add test.c</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git status</span>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git add test.c</span>
+<span class="cmd-prefix">$</span> <span class="cmd">git status</span>
 # On branch master
 #
 # Initial commit
@@ -297,39 +298,39 @@ nothing added to commit but untracked files present (use "git add" to track)
 #   new file:   test.c
 #
 </code></pre>
-                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">test.c 的狀態 Untracked files → Changes to commit (stage)</p>
-                    <p class="fragment" data-fragment-index="2" style="font-size: 0.9em;">如果新增錯檔案了怎麼辦？這個指令可以拯救你！</p>
-                    <pre class="fragment" data-fragment-index="2"><code><span style="color: white;">$</span> <span style="color: yellow;">git rm <i>file_name</i></span></code></pre>
+                    <p class="fragment" data-fragment-index="1">test.c 的狀態 Untracked files → Changes to commit (stage)</p>
+                    <p class="fragment" data-fragment-index="2">如果新增錯檔案了怎麼辦？這個指令可以拯救你！</p>
+                    <pre class="fragment" data-fragment-index="2"><code><span class="cmd-prefix">$</span> <span class="cmd">git rm --cached <i>file_name</i></span></code></pre>
                 </section>
                 <section>
                     <h2>Git的基本功 - add</h2>
-                    <pre><code><span style="color: lightgray;">## tip: git add 各種用法 ##</span>
+                    <pre><code>## tip: git add 各種用法 ##
 
-<span style="color: lightgray;">## 將列出的 file 新增到 stage ##</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git add <i>file_name_1</i>, <i>file_name_2</i>, ...</span>
+## 將列出的 file 新增到 stage ##
+<span class="cmd-prefix">$</span> <span class="cmd">git add <i>file_name_1</i> <i>file_name_2</i> <i>file_name_3</i> ...</span>
 
-<span style="color: lightgray;">## 將整份 repo 裡全部有改變的檔案新增到 stage ##</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git add --all</span>
+## 將整份 repo 裡全部有改變的檔案新增到 stage ##
+<span class="cmd-prefix">$</span> <span class="cmd">git add --all</span>
 新增到 stage
-<span style="color: lightgray;">## 將目前資料夾裡全部有更改的 txt files 新增到 stage ##</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git add *.txt</span>
+## 將目前資料夾裡全部有更改的 txt files 新增到 stage ##
+<span class="cmd-prefix">$</span> <span class="cmd">git add *.txt</span>
 
-<span style="color: lightgray;">## 將 docs 資料夾裡全部有更改的 txt files 新增到 stage ##</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git add docs/*.txt</span>
+## 將 docs 資料夾裡全部有更改的 txt files 新增到 stage ##
+<span class="cmd-prefix">$</span> <span class="cmd">git add docs/*.txt</span>
 
-<span style="color: lightgray;">## 將 docs 資料夾裡全部有更改的檔案新增到 stage ##</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git add docs/</span>
+## 將 docs 資料夾裡全部有更改的檔案新增到 stage ##
+<span class="cmd-prefix">$</span> <span class="cmd">git add docs/</span>
 
-<span style="color: lightgray;">## 將整份 repo 裡全部有更改的 txt files 新增到 stage ##</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git add "*.txt"</span>
+## 將整份 repo 裡全部有更改的 txt files 新增到 stage ##
+<span class="cmd-prefix">$</span> <span class="cmd">git add "*.txt"</span>
 </code></pre>
                 </section>
                 <section>
                     <h2>Git的基本功 - commit</h2>
-                    <p style="font-size: 0.9em;">將檔案新增到 stage 之後...就要 commit！</p>
-                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git commit</span></code></pre>
-                    <p style="font-size: 0.9em;">輸入完會跳出純文字編輯器，會讓你輸入這次更動改了什麼</p>
-                    <pre><code><span style="color: white;">Add test.c file to test git function</span>
+                    <p>將檔案新增到 stage 之後...就要 commit！</p>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git commit</span></code></pre>
+                    <p>輸入完會跳出純文字編輯器，會讓你輸入這次更動改了什麼</p>
+                    <pre><code><span class="cmd-prefix">Add test.c file to test git function</span>
 #
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
@@ -346,35 +347,35 @@ nothing added to commit but untracked files present (use "git add" to track)
                 </section>
                 <section>
                     <h2>Git的基本功 - commit</h2>
-                    <p style="font-size: 0.9em;">成功之後就會出現以下訊息</p>
+                    <p>成功之後就會出現以下訊息</p>
                     <pre><code>[master 5f76371] Add test.c file to test git function
  1 files changed, 8 insertions(+), 0 deletions(-)
  create mode 100644 test.c</code></pre>
-                    <p style="font-size: 0.9em;">加號(+)代表增加的部份，減號(–)代表刪除的部份</p>
-                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">
+                    <p>加號(+)代表增加的部份，減號(–)代表刪除的部份</p>
+                    <p class="fragment" data-fragment-index="1">
                         <br>每次 commit 都要進編輯器打訊息好麻煩，那就加上 -m</p>
-                    <pre class="fragment" data-fragment-index="1"><code><span style="color: white;">$</span> <span style="color: yellow;">git commit -m "Add test.c to test git function"</span></code></pre>
+                    <pre class="fragment" data-fragment-index="1"><code><span class="cmd-prefix">$</span> <span class="cmd">git commit -m "Add test.c to test git function"</span></code></pre>
                 </section>
                 <section>
                     <h2>Git的基本功 - log</h2>
-                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git log</span>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git log</span>
 5f76371 - (HEAD, master) Add test.c file to test git function (3 minutes ago)
 4ca268d - (origin/master) First commit (33 minutes ago)
 </code></pre>
-                    <p style="font-size: 0.9em;">亂碼是當次 commit 的版號，後面的是 commit 的訊息、時間</p>
-                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">使用 --stat 參數可以看到更詳盡的訊息</p>
-                    <pre class="fragment" data-fragment-index="1"><code><span style="color: white;">$</span> <span style="color: yellow;">git log --stat</span>
+                    <p>亂碼是當次 commit 的版號，後面的是 commit 的訊息、時間</p>
+                    <p class="fragment" data-fragment-index="1">使用 --stat 參數可以看到更詳盡的訊息</p>
+                    <pre class="fragment" data-fragment-index="1"><code><span class="cmd-prefix">$</span> <span class="cmd">git log --stat</span>
 5f76371 - (HEAD, master) Add test.c file to test git function (7 minutes ago) 
  .gitignore |    3 +++
- test.rb    |    5 +++++
+ test.c    |    5 +++++
  2 files changed, 8 insertions(+), 0 deletions(-)
 
 4ca268d - (origin/master) First commit (37 minutes ago) 
- lib/animal.rb       |    5 +++++
- spec/animal_spec.rb |    5 +++++
+ lib/animal.c       |    5 +++++
+ spec/animal_spec.c |    5 +++++
  2 files changed, 10 insertions(+), 0 deletions(-)
 </code></pre>
-                    <p class="fragment" data-fragment-index="2" style="font-size: 0.9em;">還想要更多更詳細的訊息，就加上 -p</p>
+                    <p class="fragment" data-fragment-index="2">還想要更多更詳細的訊息，就加上 -p</p>
                 </section>
                 <section>
                     <h2>Git 基本功重點整理！</h2>
@@ -392,51 +393,52 @@ nothing added to commit but untracked files present (use "git add" to track)
                 </section>
                 <section>
                     <h2>新增支線任務 branch</h2>
-                    <p style="font-size: 0.9em;">列出所有的 branch 並提示目前正在哪個 branch</p>
-                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git branch</span>
+                    <p>列出所有的 branch 並提示目前正在哪個 branch</p>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git branch</span>
 * master
 </code></pre>
-                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">確認完有哪些 branch 後，就要來新增拉</p>
-                    <pre class="fragment" data-fragment-index="1"><code><span style="color: white;">$</span> <span style="color: yellow;">git branch cat</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git branch</span>
+                    <p class="fragment" data-fragment-index="1">確認完有哪些 branch 後，就要來新增拉</p>
+                    <pre class="fragment" data-fragment-index="1"><code><span class="cmd-prefix">$</span> <span class="cmd">git branch cat</span>
+<span class="cmd-prefix">$</span> <span class="cmd">git branch</span>
   cat
 * master
 
-<span style="color: lightgray;">## 注意: 新增完後所在的 branch 還是 master ##</span>
+## 注意: 新增完後所在的 branch 還是 master ##
+## tip: 如果想刪除 branch 可以加上參數 "-d" ex: $ git branch -d cat ##
 </code></pre>
                 </section>
                 <section>
                     <h2>新增支線 branch</h2>
-                    <p style="font-size: 0.9em;">這時候的 branch 長這樣</p>
+                    <p>這時候的 branch GUI 長這樣</p>
                     <img data-src="img/branch-gh-cr.png">
-                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">那...要怎麼切換呢？ 還是在 Master 上不是嗎？</p>
+                    <p class="fragment" data-fragment-index="1">那...要怎麼切換呢？ 還是在 Master 上不是嗎？</p>
                 </section>
                 <section>
                     <h2>偶而，也想換個 branch</h2>
-                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git checkout cat</span>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git checkout cat</span>
 Switched to branch 'cat'
 
-<span style="color: lightgray;">## 檢查一下所在 branch ##</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git branch</span>
+## 檢查一下所在 branch ##
+<span class="cmd-prefix">$</span> <span class="cmd">git branch</span>
 * cat
   master
 </code></pre>
-                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">現在你可以對 cat 這個 branch 做些壞壞的事情拉</p>
+                    <p class="fragment" data-fragment-index="1">現在你可以對 cat 這個 branch 做些壞壞的事情拉</p>
                 </section>
                 <section>
-                    <h2>對著 branch 做些什麼吧！</h2>
-                    <p style="font-size: 0.9em;">接下來在 cat branch 上做點事情
+                    <h2>對著 cat 做些什麼吧！</h2>
+                    <p>接下來在 cat branch 上做點事情
                         <br>新增一個檔案，加上內容，將它 add 到 stage 後再 commit</p>
-                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">vim myPet/cat.c</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git status</span>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">vim myPet/cat.c</span>
+<span class="cmd-prefix">$</span> <span class="cmd">git status</span>
 # On branch cat
 # Untracked files:
 #   (use "git add ..." to include in what will be committed)
 #
 #   myPet/cat.c
 nothing added to commit but untracked files present (use "git add" to track)
-<span style="color: white;">$</span> <span style="color: yellow;">git add myPet/cat.c</span>
-<span style="color: white;">$</span> <span style="color: yellow;">git commit -m "Add Cat.c"</span>
+<span class="cmd-prefix">$</span> <span class="cmd">git add myPet/cat.c</span>
+<span class="cmd-prefix">$</span> <span class="cmd">git commit -m "Add Cat.c"</span>
 [cat ea7d309] Add Cat.c
  1 files changed, 3 insertions(+), 0 deletions(-)
  create mode 100644 myPet/cat.c
@@ -444,30 +446,133 @@ nothing added to commit but untracked files present (use "git add" to track)
                 </section>
                 <section>
                     <h2>這樣資料夾不是很亂嗎？？</h2>
-                    <p class="fragment" data-fragment-index="1" style="font-size: 0.9em;">咱們切回去就知道了！</p>
-                    <pre class="fragment" data-fragment-index="1"><code><span style="color: white;">$</span> <span style="color: yellow;">ls</span>
+                    <p class="fragment" data-fragment-index="1">咱們切回去就知道了！</p>
+                    <pre class="fragment" data-fragment-index="1"><code><span class="cmd-prefix">$</span> <span class="cmd">ls</span>
 test.c <span style="color: lightblue;">myPet</span>/
 
-<span style="color: white;">$</span> <span style="color: yellow;">git checkout master</span>
+<span class="cmd-prefix">$</span> <span class="cmd">git checkout master</span>
 Switched to branch 'master'
 Your branch is ahead of 'origin/master' by 1 commit.
-<span style="color: white;">$</span> <span style="color: yellow;">ls</span>
+<span class="cmd-prefix">$</span> <span class="cmd">ls</span>
 test.c
 </code></pre>
-                    <p class="fragment" data-fragment-index="2" style="font-size: 0.9em;">剛剛新增的 myPet/cat.c 消失了！
+                    <p class="fragment" data-fragment-index="2">剛剛新增的 myPet/cat.c 消失了！
                         <br>
                         <br>Git 在切換 branch 的同時會把目錄更動成那個 branch 的狀態</p>
                 </section>
                 <section>
                     <h2>再次支線 branch</h2>
-                    <p style="font-size: 0.9em;">好！我們切回去 cat branch 在做些事情然後 commit
+                    <p>好！我們切回去 cat branch 在做些事情然後 commit
                         <br>再切回去 master 查看 branch 狀態</p>
-                    <pre><code><span style="color: white;">$</span> <span style="color: yellow;">git checkout master</span>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git checkout master</span>
 Switched to branch 'master'
 Your branch is ahead of 'origin/master' by 2 commit.
 </code></pre>
-                    <p style="font-size: 0.9em;">這時候的 branch 長這樣</p>
+                    <p>這時候的 branch GUI 長這樣</p>
                     <img data-src="img/branch-gh-co.png">
+                </section>
+                <section>
+                    <h2>對著 Master 做點.....</h2>
+                    <p>這時候在 master 上繼續開發會發生什麼事呢？
+                        <br>
+                    </p>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">vi test.c</span>
+<span class="cmd-prefix">$</span> <span class="cmd">git add test.c</span>
+<span class="cmd-prefix">$</span> <span class="cmd">git commit -m "fix test.c"</span>
+[master 7d72927] fix test.c
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+</code></pre>
+                    <p class="fragment" data-fragment-index="1">咦?! branch GUI 的樣子 ...... 分岔了！</p>
+                    <img class="fragment" data-fragment-index="1" data-src="img/branch-gh-ma.png">
+                </section>
+                <section>
+                    <p>假設現在 cat branch 的開發完畢！
+                        <br>通常我們要做的事情會是</p>
+                    <p class="fragment grow" data-fragment-index="1">將 cat branch 合併回 master branch</p>
+                </section>
+                <section>
+                    <h2>branch合併 - merge</h2>
+                    <p>將兩支 branch 的 head 比對後再把內容合併起來</p>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git merge cat</span>
+Merge made by recursive.
+ myPet/cat.c |    3 +++
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+ create mode 100644 myPet/cat.c
+</code></pre>
+                    <p>merge 後的 branch GUI 長這樣~</p>
+                    <img data-src="img/branch-gh-mer.png">
+                </section>
+                <section>
+                    <h2>branch合併 - rebase</h2>
+                    <p>將某一支 branch 基於另一支 branch 的內容合併起來</p>
+                    <pre><code>## 切換到 cat branch 之後再下 rebase 指令 ##
+<span class="cmd-prefix">$</span> <span class="cmd">git checkout cat</span>
+Switched to branch 'cat'
+<span class="cmd-prefix">$</span> <span class="cmd">git rebase master</span>
+First, rewinding head to replay your work on top of it...
+Applying: Add cat.c
+Applying: Add initializer
+</code></pre>
+                    <p>branch GUI 之 rebase 的過程 ~</p>
+                    <img src="img/branch-gh-re.gif">
+                </section>
+                <section>
+                    <h2>merge vs rebase</h2>
+                    <p>rebase 為整理本地端的 branch 使用
+                        <br>要同步(push)的 branch 別使用 rebase</p>
+                    <p class="fragment" data-fragment-index="1">會出現非常多的問題，例如 commit 訊息消失了
+                        <br>多人協做 code 時會造成別人同步(push)不了...</p>
+                </section>
+                <section>
+                    <h2>迪夫 diff</h2>
+                    <p>用來檢查 commit 或 branch 之間的不同的地方</p>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git diff cat master</span>
+diff --git a/myPet/cat.c b/myPet/cat.c
+deleted file mode 100644
+index 1227d26..0000000
+--- a/myPet/cat.c 
++++ /dev/null
+@@ -1,5 +0,0 @@
+-class Cat < Animal
+-  def initialize
+-    super
+-  end
+-end
+</code></pre>
+                </section>
+                <section>
+                    <h2>處理 Git 合併時的衝突</h2>
+                    <p>常發生正在 merge 或 rebase 的過程中產生 convict (衝突)
+                        <br>例如：假設我們在 cat 和 master 上都對 cat.c 做編輯</p>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git merge cat</span>
+Auto-merging myPet/cat.c
+CONFLICT (content): Merge conflict in myPet/cat.c
+Automatic merge failed; fix conflicts and then commit the result.
+</code></pre>
+                </section>
+                <section>
+                    <p>這時候我們打開 cat.c 這支檔案會看到：</p>
+                    <pre><code>233 ## 僅擷取需要注意的地方，有時候會需要在上千行 code 裡找 ##
+234 <<<<<<<<<< <span style="color:orange;">HEAD</span>
+235     <span style="color:#00FFFF;">printf</span>(<span style="color:yellow;">"</span><span style="color:#9932CC;">It's a cat init.</span><span style="color:yellow;">"</span>);
+236 ==========
+237     <span style="color:#00FFFF;">printf</span>(<span style="color:yellow;">"</span><span style="color:#9932CC;">It's a cat.</span><span style="color:yellow;">"</span>);
+238 >>>>>>>>>> <span style="color:orange;">cat</span>
+</code></pre>
+                    <p>做出決定看是要都留下，或是選一個，或是改成想要的內容</p>
+                    <p>修改完畢後存檔，將修改過的檔案再使用 git add
+                        <br>將衝突都修正完畢後就使用 git commit 在提交一次</p>
+                </section>
+                <section>
+                    <h3>發生 confict 時的處理步驟</h3>
+                    <ol>
+                        <li>將發生 confict 的檔案打開處理內容
+                            <br>(別忘了刪除<<<、===、>>> )</li>
+                        <li>使用 git add 將處理好的檔案加入 stage</li>
+                        <li>反覆步驟 1~2 直到所有 confict 處理完畢</li>
+                        <li>git commit 提交合併訊息</li>
+                        <li>完成！</li>
+                    </ol>
                 </section>
             </section>
         </div>
