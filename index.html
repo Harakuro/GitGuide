@@ -37,9 +37,7 @@
             <section>
                 <section>
                     <h2>什麼是 Git？</h2>
-                </section>
-                <section>
-                    <q>"Git is a free and open source distributed version control system designed to handle everything from small to large projects with speed and efficiency."</q>
+                    <q><br>"Git is a free and open source distributed version control system designed to handle everything from small to large projects with speed and efficiency."</q>
                     <P style="text-align: right; font-size: 0.7em;">By Linus Torvalds</P>
                     <aside class="notes">
                         <!-- 講稿 -->
@@ -61,8 +59,6 @@
                 </section>
                 <section>
                     <h2>那誰再用 Git 管理？</h2>
-                </section>
-                <section>
                     <img data-src="img/using_git.png">
                     <aside class="notes">
                         <!-- 講稿 -->
@@ -87,7 +83,7 @@
                     <img class="fragment" data-fragment-index="3" data-src="img/coding.png">
                 </section>
                 <section>
-                    <h2>那就來點 RE. 吧</h2>
+                    <h2>那就來點 Re. 吧</h2>
                     <p class="fragment" data-fragment-index="1" style="text-align: right; font-size: 0.8em;">ゼロから始める異世界生活？</p>
                 </section>
                 <section>
@@ -108,7 +104,7 @@
                 </section>
                 <section>
                     <h2>更不用說....</h2>
-                    <h2>未來還要<span class="fragment highlight-red" data-fragment-index="1">多人協作</span>一份project</h2>
+                    <h2>未來還要<span class="fragment highlight-red" data-fragment-index="1">多人協作</span>一份Project</h2>
                     <ul>
                         <li class="fragment" data-fragment-index="1">命名還需要加上編輯者？</li>
                         <li class="fragment" data-fragment-index="1">WTF！那天誰又改了什麼？</li>
@@ -173,7 +169,7 @@
                     </ul>
                 </section>
                 <section>
-                    <h2>我知道git是什麼了</h2>
+                    <h2>我知道Git是什麼了</h2>
                     <h2>但是要怎麼用？</h2>
                 </section>
                 <section>
@@ -224,14 +220,14 @@ work on the current change (see also: git help everyday)
                 <section>
                     <h2>開始使用 Git！- init</h2>
                     <pre><code>## 先建立資料夾 ##
-<span class="cmd-prefix">$</span> <span class="cmd">mkdir <i>file_name</i></span>
+<span class="cmd-prefix">$</span> <span class="cmd">mkdir <i>file</i></span>
 
 ## 移動到剛剛創好的資料夾 ##
-<span class="cmd-prefix">$</span> <span class="cmd">cd <i>file_name</i></span>
+<span class="cmd-prefix">$</span> <span class="cmd">cd <i>file</i></span>
 
 ## 建立 Git repo ##
 <span class="cmd-prefix">$</span> <span class="cmd">git init</span>
-Initialized empty Git repository in /path/<i>file_name</i>/.git
+Initialized empty Git repository in /path/<i>file</i>/.git
 
 ## 會把當前資料夾設定成一個 repo ##
 </code></pre>
@@ -239,9 +235,9 @@ Initialized empty Git repository in /path/<i>file_name</i>/.git
                 <section>
                     <h2>開始使用 Git！- clone</h2>
                     <pre><code>## 複製 Git repo ##
-<span class="cmd-prefix">$</span> <span class="cmd">git clone https://path/repo_name.git <i>file_name</i></span>
+<span class="cmd-prefix">$</span> <span class="cmd">git clone https://path/repo_name.git <i>file</i></span>
 
-## 會在當前資料夾中建立一個 <i>file_name</i> 的資料夾，把 git 下來的資料放進去 ##
+## 會在當前資料夾中建立一個 <i>file</i> 的資料夾，把 git 下來的資料放進去 ##
 </code></pre>
                 </section>
                 <section>
@@ -300,14 +296,14 @@ nothing added to commit but untracked files present (use "git add" to track)
 </code></pre>
                     <p class="fragment" data-fragment-index="1">test.c 的狀態 Untracked files → Changes to commit (stage)</p>
                     <p class="fragment" data-fragment-index="2">如果新增錯檔案了怎麼辦？這個指令可以拯救你！</p>
-                    <pre class="fragment" data-fragment-index="2"><code><span class="cmd-prefix">$</span> <span class="cmd">git rm --cached <i>file_name</i></span></code></pre>
+                    <pre class="fragment" data-fragment-index="2"><code><span class="cmd-prefix">$</span> <span class="cmd">git rm --cached <i>file</i></span></code></pre>
                 </section>
                 <section>
                     <h2>Git的基本功 - add</h2>
                     <pre><code>## tip: git add 各種用法 ##
 
 ## 將列出的 file 新增到 stage ##
-<span class="cmd-prefix">$</span> <span class="cmd">git add <i>file_name_1</i> <i>file_name_2</i> <i>file_name_3</i> ...</span>
+<span class="cmd-prefix">$</span> <span class="cmd">git add <i>file1</i> <i>file2</i> <i>file3</i> ...</span>
 
 ## 將整份 repo 裡全部有改變的檔案新增到 stage ##
 <span class="cmd-prefix">$</span> <span class="cmd">git add --all</span>
@@ -388,7 +384,7 @@ nothing added to commit but untracked files present (use "git add" to track)
             </section>
             <section>
                 <section>
-                    <h2>branch 哲學</h2>
+                    <h2>Branch 哲學</h2>
                     <img data-src="img/branch-gh.png">
                 </section>
                 <section>
@@ -524,6 +520,11 @@ Applying: Add initializer
                         <br>多人協做 code 時會造成別人同步(push)不了...</p>
                 </section>
                 <section>
+                    <h2>其實...還有很多種合併方式</h2>
+                    <p>像是指定 commit 的合併</p>
+                    <p>但今天只講 merge and rebase</p>
+                </section>
+                <section>
                     <h2>迪夫 diff</h2>
                     <p>用來檢查 commit 或 branch 之間的不同的地方</p>
                     <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git diff cat master</span>
@@ -567,13 +568,295 @@ Automatic merge failed; fix conflicts and then commit the result.
                     <h3>發生 confict 時的處理步驟</h3>
                     <ol>
                         <li>將發生 confict 的檔案打開處理內容
-                            <br>(別忘了刪除<<<、===、>>> )</li>
+                            <br>(別忘了刪除
+                            <<<、===、>>> )</li>
                         <li>使用 git add 將處理好的檔案加入 stage</li>
                         <li>反覆步驟 1~2 直到所有 confict 處理完畢</li>
                         <li>git commit 提交合併訊息</li>
                         <li>完成！</li>
                     </ol>
                 </section>
+            </section>
+            <section>
+                <section>
+                    <h2>檔案回復！！</h2>
+                    <p>版本控制最大的好處之一就是讓你永遠可以後悔</p>
+                </section>
+                <section>
+                    <h2>取消上一次的 commit - reset</h2>
+                    <img data-src="img/branch-gh-mer.png">
+                    <pre class="fragment" data-fragment-index="1"><code><span class="cmd-prefix">$</span> <span class="cmd">git reset --soft ORIG_HEAD</span>
+HEAD is now at c126ff9 Config initialze
+</code></pre>
+                    <img class="fragment" data-fragment-index="2" data-src="img/branch-gh-ma.png">
+                </section>
+                <section>
+                    <h2>取消已暫存(stage)的檔案 - reset</h2>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git add myPet/</span>
+<span class="cmd-prefix">$</span> <span class="cmd">git status</span>
+# On branch cat
+# Changes to be committed:
+#    (use "git reset HEAD <file>..." to unstage)
+#
+#    <span style="color:green;">modifide: myPet/不能說的秘密.txt</span>
+#
+<span class="cmd-prefix">$</span> <span class="cmd">git reset --hard HEAD myPet/不能說的秘密.txt</span>
+Unstaged changess after reset:
+M       myPet/不能說的秘密.txt
+<span class="cmd-prefix">$</span> <span class="cmd">git status</span>
+# On branch cat
+# Changes not staged for commit:
+#    (use "git add <file>..." to update  what will be committed)
+#
+#    <span style="color:red;">modifide: myPet/不能說的秘密.txt</span>
+#
+</code></pre>
+                </section>
+                <section>
+                    <h2>取消上一次的操作 - checkout！</h2>
+                    <pre><code>## 取消修改過的檔案 ##
+<span class="cmd-prefix">$</span> <span class="cmd">git checkout -- myPet/cat.c</span>
+
+## 取消變更不會有任何訊息，但這時你去看檔案會發現已經回復成沒修改過時的樣子了 ##
+</code></pre>
+                </section>
+                <section>
+                    <h2>回復到之前的版本 - reset</h2>
+                    <p>有時候想回到之前 commit 時的狀態，這時候我們可以用</p>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git reset HEAD</span>
+
+## HEAD 參數可以加上一些變化，例如 HEAD^ 表示目前版本的上一個版本 HEAD~2 則是再上一個 ##
+</code></pre>
+                </section>
+                <section>
+                    <h2>Git reset, hard 與 soft 的差異</h2>
+                    <ul>
+                        <li>reset 預設: 做過的修改仍然保留，但不加入 stage</li>
+                        <li>--soft 參數: 做過的修改保留且加入 stage</li>
+                        <li>--hard 參數: 完全刪除修改內容，回復版本的樣子</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Git rm, reset 的差異</h2>
+                    <pre><code>## 若檔案應該要在 repository 內，則使用 reset ##
+<span class="cmd-prefix">$</span> <span class="cmd">git reset HEAD <i>file</i></span>
+</code></pre>
+                    <pre><code>## 若該檔案不應該在 repository 內，則使用 rm (因為 rm 會連 repo 裡的檔案一起刪除) ##
+<span class="cmd-prefix">$</span> <span class="cmd">git rm --cached <i>file</i></span>
+</code></pre>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>與遠端協同工作</h2>
+                </section>
+                <section>
+                    <h2>查詢 Remote</h2>
+                    <pre><code>## 列出所有遠端儲存庫的名稱 ##
+<span class="cmd-prefix">$</span> <span class="cmd">git remote</span>
+origin
+
+## 可以加上 -v 參數，將會在名稱後方顯示其URL ##
+<span class="cmd-prefix">$</span> <span class="cmd">git remote -v</span>
+origin https://github.com/Harakuro/GitGuideDemo.git
+</code></pre>
+                </section>
+                <section>
+                    <h2>遠端儲存庫設置！</h2>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git remote -v</span>
+origin https://github.com/Harakuro/GitGuideDemo.git
+----------------------------------------------------------------------------------
+## 使用 git remote add [remote_name] [url] 增加遠端儲存庫 ##
+<span class="cmd-prefix">$</span> <span class="cmd">git remote add dontsay https://github.com/Avatar/GitGuideDemo.git</span>
+<span class="cmd-prefix">$</span> <span class="cmd">git remote -v</span>
+origin https://github.com/Harakuro/GitGuideDemo.git
+dontsay https://github.com/Avatar/GitGuideDemo.git
+----------------------------------------------------------------------------------
+## 使用 git rename [old_remote_name] [new_remote_name] 改變遠端儲存庫名稱 ##
+<span class="cmd-prefix">$</span> <span class="cmd">git remote rename dontsay kuromi</span>
+<span class="cmd-prefix">$</span> <span class="cmd">git remote -v</span>
+origin https://github.com/Harakuro/GitGuideDemo.git
+kuromi https://github.com/Avatar/GitGuideDemo.git
+----------------------------------------------------------------------------------
+## 使用 git rm [remote_name] 刪除遠端儲存庫名稱 ##
+<span class="cmd-prefix">$</span> <span class="cmd">git remote rm kuromi</span>
+<span class="cmd-prefix">$</span> <span class="cmd">git remote -v</span>
+origin https://github.com/Harakuro/GitGuideDemo.git
+</code></pre>
+                </section>
+                <section>
+                    <h2>查看遠端數據庫的修改內容 - fetch</h2>
+                    <pre><code>## 要確認遠端數據庫的修改內容，但不想合併內容到本地端數據庫時可以使用 ##
+## git fetch [remote_name] [branch_name] ##
+<span class="cmd-prefix">$</span> <span class="cmd">git fetch origin master</span>
+</code></pre>
+                </section>
+                <section>
+                    <h2>合併遠端數據庫的修改內容 - pull</h2>
+                    <pre><code>## git pull [remote_name] [branch_name] ##
+<span class="cmd-prefix">$</span> <span class="cmd">git pull origin master</span>
+</code></pre>
+                    <p>要記住 pull = fetch + merge</p>
+                </section>
+                <section>
+                    <h2>同步修改內容到遠端數據庫 - push</h2>
+                    <pre><code>## git push [remote_name] [branch_name] ##
+<span class="cmd-prefix">$</span> <span class="cmd">git push origin master</span>
+</code></pre>
+                </section>
+                <section>
+                    <img src="img/basic-remote-workflow.png" style="width: 80%;">
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Git Tag</h2>
+                    <p>在特定時間點加入標籤去註明其重要性的功能</p>
+                </section>
+                <section>
+                    <h2>列出 Tag</h2>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git tag</span>
+v0.1
+v1.3
+
+## 以Git本身的儲存庫為例，其中包含超過240個 tag。我們只要看其中 1.4.2 時 ##
+<span class="cmd-prefix">$</span> <span class="cmd">git tag -l 'v1.4.2.*'</span>
+v1.4.2.1
+v1.4.2.2
+v1.4.2.3
+v1.4.2.4
+</code></pre>
+                </section>
+                <section>
+                    <h2>建立 Tag</h2>
+                    <p>lightweight(輕量級) VS annotated(含附註)</p>
+                    <ul>
+                        <li>lightweight Tag 是只有指到特定 commit 的指標。</li>
+                        <li>annotated Tag 則是詳細的紀錄各種 commit 訊息
+                            <br>為實際存在在 Git 裡的物件</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>建立 Tag - annotated</h2>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git tag -a v1.4 -m 'my version 1.4'</span>
+<span class="cmd-prefix">$</span> <span class="cmd">git tag</span>
+v1.4
+
+## 使用 show 來顯示 Tag 資訊 ##
+<span class="cmd-prefix">$</span> <span class="cmd">git show v1.4</span>
+tag v1.4
+Tagger: Harakuro
+Date:   Sat Sep 31 14:45:11 2016 -0800
+
+my version 1.4
+
+commit 15027957951b64cf874c3557a0f3547bd83b3ff6
+Merge: 4a447f7... a6b4c97...
+Author: Harakuro
+Date:   Sun Feb 8 19:02:46 2009 -0800
+
+    Merge branch 'cat'
+</code></pre>
+                </section>
+                <section>
+                    <h2>建立 Tag - lightweight</h2>
+                    <pre><code>## 不需要加上 -a or -m ##
+<span class="cmd-prefix">$</span> <span class="cmd">git tag v1.4w</span>
+<span class="cmd-prefix">$</span> <span class="cmd">git tag</span>
+v1.4
+v1.4w
+
+## 使用 show 來顯示 Tag 資訊 ##
+<span class="cmd-prefix">$</span> <span class="cmd">git show v1.4w</span>
+commit 15027957951b64cf874c3557a0f3547bd83b3ff6
+Merge: 4a447f7... a6b4c97...
+Author: Harakuro
+Date:   Sun Feb 8 19:02:46 2009 -0800
+
+    Merge branch 'cat'
+</code></pre>
+                </section>
+                <section>
+                    <h2>追加過去 commit 的 Tag</h2>
+                    <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git tag v1.2 9fceb02</span>
+<span class="cmd-prefix">$</span> <span class="cmd">git tag</span>
+v1.2
+v1.4
+v1.4w
+</code></pre>
+                    <p>其中 9fceb02 是 commit 的 hash，可以使用 git log 來查詢</p>
+                </section>
+                <section>
+                    <h2>同步 Tag</h2>
+                    <p>預設情況下，git push 指令是不會將標籤傳到遠端伺服器上的</p>
+                    <pre><code>## git push origin [tagname] ##
+<span class="cmd-prefix">$</span> <span class="cmd">git push origin v1.2</span>
+</code></pre>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>想在自己電腦上使用</h2>
+                    <ul>
+                        <li>在 Linux 系統安裝
+                            <pre><code>## 若有使用Fedora，可以使用yum ##
+<span class="cmd-prefix">$</span> <span class="cmd">yum install git-core</span>
+## 以Debian為基礎的發行套件，如：Ubuntu 試試apt-get ##
+<span class="cmd-prefix">$</span> <span class="cmd">apt-get install git</span>
+</code></pre>
+                        </li>
+                        <li>在 Mac 系統安裝(對 mac 不熟)
+                            <pre><code><span class="cmd-prefix">$</span> <span class="cmd">sudo port install git-core +svn +doc +bash_completion +gitweb</span>
+</code></pre>
+                        </li>
+                        <li>在 Windows 系統安裝
+                            <br> 到官網下載 <a href="https://git-scm.com/" target="_blank">https://git-scm.com/</a>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>關於 Git GUI</h2>
+                    <ul>
+                        <li>GitHub GUI (功能簡潔)
+                            <ul>
+                                <li>Clone Repositories</li>
+                                <li>Browse History</li>
+                                <li>Commit Changes</li>
+                                <li>Branch Code </li>
+                                <li>Share on GitHub.com</li>
+                            </ul>
+                        </li>
+                        <li>SourceTree
+                            <ul>
+                                <li>有較完整的 git 功能</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Free Git Server！</h2>
+                    <ul>
+                        <li>GitHub
+                            <ul>
+                                <li>Github page</li>
+                                <li>Gist</li>
+                                <li>public</li>
+                                <li>系上的課程很常使用</li>
+                            </ul>
+                        </li>
+                        <li>bitbucket
+                            <ul>
+                                <li>private</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://medium.com/flow-ci/github-vs-bitbucket-vs-gitlab-vs-coding-7cf2b43888a1#.j0dgz6ixh" target="_blank">Other Git Server</a>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <h1>Thank you</h1>
             </section>
         </div>
     </div>
@@ -582,7 +865,7 @@ Automatic merge failed; fix conflicts and then commit the result.
     <script>
     Reveal.initialize({
         controls: false,
-        history: false,
+        history: true,
 
         dependencies: [{
             src: 'plugin/zoom-js/zoom.js',
