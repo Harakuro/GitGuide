@@ -26,6 +26,10 @@
     <div class="reveal">
         <div class="slides">
             <section>
+                <img src="img/github.png">
+                <h1 style="font-size: 2em;">先註冊一個 GitHub 帳號</h1>
+            </section>
+            <section>
                 <img src="img/git_logo.png" style="width: 15%; height: auto;">
                 <h1 style="margin-bottom: 0px;">Git Guide</h1>
                 <p style="text-align: right; font-size: 0.66em; margin-top: 0px;">For NTUCSIEB05</p>
@@ -37,7 +41,8 @@
             <section>
                 <section>
                     <h2>什麼是 Git？</h2>
-                    <q><br>"Git is a free and open source distributed version control system designed to handle everything from small to large projects with speed and efficiency."</q>
+                    <q>
+                        <br>"Git is a free and open source distributed version control system designed to handle everything from small to large projects with speed and efficiency."</q>
                     <P style="text-align: right; font-size: 0.7em;">By Linus Torvalds</P>
                     <aside class="notes">
                         <!-- 講稿 -->
@@ -378,6 +383,27 @@ nothing added to commit but untracked files present (use "git add" to track)
                     <img data-src="img/git-lifecycle.png">
                 </section>
                 <section>
+                    <h1>實作時間！</h1>
+                </section>
+                <section>
+                    <h2>操作導覽！</h2>
+                    <ul>
+                        <li>設定 Git User_name</li>
+                        <li>建立 repository</li>
+                        <li>在 repository 裡新增檔案</li>
+                        <pre><code><span class="cmd-prefix">$</span> <span class="cmd">vim file_name</span>
+## 按下鍵盤上的 I ，啟動編輯模式 ##
+## 隨意打一些字母當作 code。##
+## 離開時按下 esc 切回命令模式 ##
+## 輸入 :wq >> enter 離開 vim 畫面 ##
+</code></pre>
+                        <li>增加檔案到 stage</li>
+                        <li>將檔案 commit 上去 ( 多重複 新增檔案 commit ) </li>
+                        <li>隨時查看 repository 狀態</li>
+                        <li>試著學會看 Git Log (離開時使用 :q)</li>
+                    </ul>
+                </section>
+                <section>
                     <h2>Git 就只有這樣嗎？</h2>
                     <p class="fragment" data-fragment-index="1">當然不只，還有 branch！</p>
                 </section>
@@ -515,7 +541,7 @@ Applying: Add initializer
                 <section>
                     <h2>merge vs rebase</h2>
                     <p>rebase 為整理本地端的 branch 使用
-                        <br>要同步(push)的 branch 別使用 rebase</p>
+                        <br>要同步(push or pull)的 branch 別使用 rebase</p>
                     <p class="fragment" data-fragment-index="1">會出現非常多的問題，例如 commit 訊息消失了
                         <br>多人協做 code 時會造成別人同步(push)不了...</p>
                 </section>
@@ -576,6 +602,21 @@ Automatic merge failed; fix conflicts and then commit the result.
                         <li>完成！</li>
                     </ol>
                 </section>
+                <section>
+                    <h2>操作導覽！</h2>
+                    <ul>
+                        <li>建立新的 branch</li>
+                        <li>在新的 branch 上新增檔案然後 commit </li>
+                        <li>在 branch 之間切換</li>
+                        <li>試著 diff 兩個 branch 來找不同</li>
+                        <li>試著使用 merge 看看</li>
+                        <li>用 dir or ls 來檢查 repo 裡的檔案</li>
+                        <li>merge 之後可以用以下指令來回到 merge 前的狀態
+                            <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git reset --hard ORIG_HEAD</span>
+</code></pre>
+                        </li>
+                    </ul>
+                </section>
             </section>
             <section>
                 <section>
@@ -583,7 +624,7 @@ Automatic merge failed; fix conflicts and then commit the result.
                     <p>版本控制最大的好處之一就是讓你永遠可以後悔</p>
                 </section>
                 <section>
-                    <h2>取消上一次的 commit - reset</h2>
+                    <h2>取消上一次的 merge - reset</h2>
                     <img data-src="img/branch-gh-mer.png">
                     <pre class="fragment" data-fragment-index="1"><code><span class="cmd-prefix">$</span> <span class="cmd">git reset --soft ORIG_HEAD</span>
 HEAD is now at c126ff9 Config initialze
@@ -687,13 +728,13 @@ origin https://github.com/Harakuro/GitGuideDemo.git
                 <section>
                     <h2>查看遠端數據庫的修改內容 - fetch</h2>
                     <pre><code>## 要確認遠端數據庫的修改內容，但不想合併內容到本地端數據庫時可以使用 ##
-## git fetch [remote_name] [branch_name] ##
+## git fetch [remote_name] [remote_branch_name] ##
 <span class="cmd-prefix">$</span> <span class="cmd">git fetch origin master</span>
 </code></pre>
                 </section>
                 <section>
                     <h2>合併遠端數據庫的修改內容 - pull</h2>
-                    <pre><code>## git pull [remote_name] [branch_name] ##
+                    <pre><code>## git pull [remote_name] [remote_branch_name] ##
 <span class="cmd-prefix">$</span> <span class="cmd">git pull origin master</span>
 </code></pre>
                     <p>要記住 pull = fetch + merge</p>
@@ -706,6 +747,17 @@ origin https://github.com/Harakuro/GitGuideDemo.git
                 </section>
                 <section>
                     <img src="img/basic-remote-workflow.png" style="width: 80%;">
+                </section>
+                <section>
+                    <h1>實作時間！</h1>
+                </section>
+                <section>
+                    <h2>操作導覽！</h2>
+                    <ul>
+                        <li>先在 GitHub 上新增一個 repository</li>
+                        <li>增加一個遠端資料庫指定到 GitHub</li>
+                        <li>把 repository push 到 GitHub 上</li>
+                    </ul>
                 </section>
             </section>
             <section>
@@ -793,6 +845,15 @@ v1.4w
 <span class="cmd-prefix">$</span> <span class="cmd">git push origin v1.2</span>
 </code></pre>
                 </section>
+                <section>
+                    <h2>操作導覽！</h2>
+                    <ul>
+                        <li>建立一個 annotated Tag</li>
+                        <li>試著對之前的 commit 上 Tag</li>
+                        <li>隨時查看所有 Tag</li>
+                        <li>將 Tag push 到 GitHub 上</li>
+                    </ul>
+                </section>
             </section>
             <section>
                 <section>
@@ -865,7 +926,7 @@ v1.4w
     <script>
     Reveal.initialize({
         controls: false,
-        history: false,
+        history: true,
 
         dependencies: [{
             src: 'plugin/zoom-js/zoom.js',
