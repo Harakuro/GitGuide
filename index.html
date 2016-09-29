@@ -363,7 +363,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 5f76371 - (HEAD, master) Add test.c file to test git function (3 minutes ago)
 4ca268d - (origin/master) First commit (33 minutes ago)
 </code></pre>
-                    <p>亂碼是當次 commit 的版號，後面的是 commit 的訊息、時間</p>
+                    <p>亂碼是 commit 的版號(SHA)，後面的是 commit 的訊息、時間</p>
                     <p class="fragment" data-fragment-index="1">使用 --stat 參數可以看到更詳盡的訊息</p>
                     <pre class="fragment" data-fragment-index="1"><code><span class="cmd-prefix">$</span> <span class="cmd">git log --stat</span>
 5f76371 - (HEAD, master) Add test.c file to test git function (7 minutes ago) 
@@ -401,6 +401,8 @@ nothing added to commit but untracked files present (use "git add" to track)
                         <li>將檔案 commit 上去 ( 多重複 新增檔案 commit ) </li>
                         <li>隨時查看 repository 狀態</li>
                         <li>試著學會看 Git Log (離開時使用 :q)</li>
+                        <pre><code><span class="cmd-prefix">$</span> <span class="cmd">git config --global core.pager "less -R"</span>
+</code></pre>
                     </ul>
                 </section>
                 <section>
@@ -926,7 +928,7 @@ v1.4w
     <script>
     Reveal.initialize({
         controls: false,
-        history: false,
+        history: true,
 
         dependencies: [{
             src: 'plugin/zoom-js/zoom.js',
